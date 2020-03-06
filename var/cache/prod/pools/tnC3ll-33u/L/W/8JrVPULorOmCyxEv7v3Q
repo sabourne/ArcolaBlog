@@ -1,0 +1,167 @@
+<?php //%255BApp%255CEntity%255CPost%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Post',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Post',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\PostRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'title' => [
+                        'fieldName' => 'title',
+                        'type' => 'text',
+                        'scale' => 0,
+                        'length' => 100,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'title',
+                    ],
+                    'body' => [
+                        'fieldName' => 'body',
+                        'type' => 'text',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'body',
+                    ],
+                    'date' => [
+                        'fieldName' => 'date',
+                        'type' => 'datetime',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'date',
+                    ],
+                    'imageFilename' => [
+                        'fieldName' => 'imageFilename',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'image_filename',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'body' => 'body',
+                    'date' => 'date',
+                    'image_filename' => 'imageFilename',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'body' => 'body',
+                    'date' => 'date',
+                    'imageFilename' => 'image_filename',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'post',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'tags' => [
+                        'fieldName' => 'tags',
+                        'joinTable' => [
+                            'name' => 'post_tag',
+                            'joinColumns' => [
+                                [
+                                    'name' => 'post_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'tag_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\Tag',
+                        'mappedBy' => null,
+                        'inversedBy' => 'posts',
+                        'cascade' => [
+                            'persist',
+                        ],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Post',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => true,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'post_id',
+                            'tag_id',
+                        ],
+                        'isOnDeleteCascade' => true,
+                        'relationToSourceKeyColumns' => [
+                            'post_id' => 'id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'tag_id' => 'id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

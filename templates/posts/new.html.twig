@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Arcola New Blog Post{% endblock %}
+
+{% block body %}
+    {{ form_start(PostForm) }}
+    {{ form_widget(PostForm) }}
+    {{ form_end(PostForm) }}
+{% endblock %}

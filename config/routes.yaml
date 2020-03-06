@@ -1,0 +1,7 @@
+# index:
+#    path: /
+#    controller: App\Controller\PostController::index
+
+relevant:
+   path: /post/tag/{tag}
+   controller: App\Controller\PostController::relevant

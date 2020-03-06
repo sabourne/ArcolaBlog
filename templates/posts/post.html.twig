@@ -7,6 +7,16 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.body }}</p>
     <p>Date published: {{ post.date|date("m/d/Y") }}</p>
+    {# Minutes to read #}    
+    <p><i class="fa fa-clock-o"></i>
+    {% set numberOfWords = post.body|split(' ')|length%}
+    {% set wordsPerMinute = (numberOfWords/200)|round(0, 'common') %}                             
+    {% if wordsPerMinute >= 1 %}
+        {{wordsPerMinute}}
+    {% else %}
+        Less than 1
+    {% endif %}
+    min read</p>
     <p>Tags: 
         {% for tag in post.tags %}
         <span class="badge badge-dark">{{ tag.name }}</span>                            
